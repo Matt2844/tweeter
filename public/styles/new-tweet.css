@@ -1,0 +1,64 @@
+* {
+  box-sizing: border-box;
+}
+
+.container {
+  font-family: 'Source Sans Pro', sans-serif ;
+  display: flex;
+  justify-content: center;
+  margin-top: 1.5em;
+}
+
+main section h2 {
+  font-size: 18px;
+  box-shadow: 2px 2px 5px black;
+  padding: 1em;
+  background-color: white;
+  border-radius: 8px;
+}
+
+.new-tweet {
+  padding: 2em;
+  background-color:#4056A1; 
+  background-image: url(/public/images/concrete-wall.png);
+  border-radius: 12px;
+  margin-bottom: 1em;
+}
+
+#tweet-text {
+  width: 25em;
+  height: 7em;
+  padding: 1em;
+  box-shadow: 2px 2px 5px black;
+  border-top-style: hidden;
+  border-radius: 8px;
+}
+
+#tweet-text:focus {
+  outline: none;
+}
+
+.new-tweet button {
+  margin-left: 4%;
+  margin-top: 5%;
+  padding: 7px;
+  width: 100px;
+  background-color: rgb(211, 94, 94);
+  border-radius: 3px;
+  box-shadow: 2px 2px 5px black;
+  border: none;
+  font-family: 'Bungee', sans-serif;
+  color: #FFFF
+}
+
+.new-tweet button:hover {
+  box-shadow: 2px 2px 5px rgb(187,229,237);
+  color: #4056A1;
+}
+
+.counter {
+  display: flex;
+  justify-content: flex-end;
+  margin-right: 2em;
+  font-family: 'Bungee', sans-serif;
+}
