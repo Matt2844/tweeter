@@ -17,12 +17,12 @@ const handleKeyUp = function() {
 
 // Change tweeter handle to visible on hover
 const tweetNameVisible = function() {
-  $('.hidden-handle').animate({ opacity: 1 }, 100);
+  $('.hidden-handle').animate({ opacity: 1 }, 300);
 };
 
 // Change tweeter handle opacity back to invsible
 const tweetNameInvisible = function() {
-  $('.hidden-handle').animate({ opacity: 0 }, 100);
+  $('.hidden-handle').animate({ opacity: 0 }, 300);
 }
 
 

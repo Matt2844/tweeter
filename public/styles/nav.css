@@ -9,6 +9,8 @@ nav {
   color: #FFFF; 
   padding: 1.5em;
   font-family: 'Source Sans Pro', sans-serif;
+  position: fixed;
+  top: 0;
 }
 
 .nav-logo {
