@@ -2,7 +2,7 @@
   box-sizing: border-box;
 }
 
-header {
+.avatar-header {
   height: 400px; 
   width: 100%;
   background-color: rgb(187, 229, 237);
