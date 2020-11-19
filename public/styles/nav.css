@@ -10,7 +10,8 @@ nav {
   padding: 1.5em;
   font-family: 'Source Sans Pro', sans-serif;
   position: fixed;
-  top: 0;
+  top: 0; 
+  
 }
 
 .nav-logo {

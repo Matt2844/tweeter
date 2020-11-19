@@ -25,7 +25,7 @@
 }
 
 #tweet-text {
-  width: 25em;
+  width: 27em;
   height: 7em;
   padding: 1em;
   box-shadow: 2px 2px 5px black;
@@ -82,10 +82,11 @@
   border-radius: 12px;
   margin-bottom: 1em;
   margin-top: 1em;
-  max-width: 492px;
+  width: 32em;
   margin: auto;
   padding-top: 1em;
   padding-bottom: 1em;
+  
 }
 
 .previous-tweets-container h1 {
@@ -94,14 +95,12 @@
 }
 
 .previous-tweets p {
-  height: 11em;
+  height: 12em;
   background-color: #FFFF;
-  margin-left: 1.5em;
-  margin-right: 1.5em;
   border-radius: 12px;
   box-shadow: 3px 3px 5px;
   padding: 2em;
-  max-width: 475px;
+  width: 27em;
   margin: auto; 
 }
 
@@ -118,6 +117,7 @@
   margin-top: 15px;
   font-size: 18px;
 }
+
 
 
 

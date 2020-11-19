@@ -1,7 +1,7 @@
 
 // Ensure DOM has loaded
 $(document).ready(function() {
-  console.log("DOM ready");
+  console.log("DOM ready 'testing'");
 
   $('#tweet-text').keyup(handleKeyUp);
   $('.previous-tweets-container').mouseenter(tweetNameVisible).mouseleave(tweetNameInvisible);
