@@ -10,6 +10,7 @@ $(document).ready(function() {
   $('.new-tweet button').click(function(event) {
     event.preventDefault();
     createTweetElement();
+    console.log($('#tweet-text').serialize());
   });
 });
 
@@ -59,7 +60,8 @@ const data = [
 // Taking the data from "create new tweet" and posting it to the feed
 const createTweetElement = function() {
   let $tweet = $('<article>').addClass('tweet')
-  let tweetHTML = `
+  let tweetHTML =
+    `   <div class="previous-tweets-container">
       <h1>${tweetData.user.avatars}<span>${tweetData.user.name}</span><span class="hidden-handle">${tweetData.user.handle}</span></h1>
       <p>${tweetData.content.text}</p>
       <footer>

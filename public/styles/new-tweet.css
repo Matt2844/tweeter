@@ -71,8 +71,8 @@
   background-image: url(/public/images/concrete-wall.png);
   font-family: 'Source Sans Pro', 'sans-serif';
   height: 25em; /* This might have to be adjusted later. */
-  padding-top: 1.5em;
-  margin-bottom: 3em; /* This should be taken off before submitting */
+  padding-top: 2.5em;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
 }
 
 .previous-tweets-container {
