@@ -10,24 +10,26 @@ $(document).ready(function() {
   $('.new-tweet button').click(function(event) {
     event.preventDefault();
     createTweetElement();
-    console.log($('#tweet-text').serialize());
+    $('#tweet-text').serialize();
+    loadTweets()
   });
 });
 
 
+// receive array of tweets as json get request
 
 // Fake user Data
-const tweetData = {
-  "user": {
-    "name": "Newton",
-    "avatars": "https://i.imgur.com/73hZDYK.png",
-    "handle": "@SirIsaac"
-  },
-  "content": {
-    "text": "If I have seen further it is by standing on the shoulders of giants"
-  },
-  "created_at": 1461116232227
-}
+// const tweetData = {
+//   "user": {
+//     "name": "Newton",
+//     "avatars": "https://i.imgur.com/73hZDYK.png",
+//     "handle": "@SirIsaac"
+//   },
+//   "content": {
+//     "text": "If I have seen further it is by standing on the shoulders of giants"
+//   },
+//   "created_at": 1461116232227
+// }
 
 const data = [
   {
@@ -80,6 +82,15 @@ const renderTweets = function(tweets) {
     $('.previous-tweets').append(tweetElement);
   }
 }
+
+const loadTweets = function() {
+  $.ajax({
+    dataType: "json",
+    url: 'http://127.0.0.1:5500/public/index.html',
+    data: data,
+    success: 'success'
+  });
+};
 
 
 
