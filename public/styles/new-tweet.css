@@ -3,8 +3,9 @@
   font-family: 'Source Sans Pro', sans-serif ;
   display: flex;
   justify-content: center;
-  
-  background-image: url(/public/images/concrete-wall.png);
+  width: 100%;
+  background-color: #FFFF;
+   /* Add concrete transparent image here */
 }
 
 .new-tweet h2 {
@@ -18,10 +19,11 @@
 .new-tweet {
   padding: 2em;
   background-color:#4056A1; 
-  background-image: url(/public/images/concrete-wall.png);
+  background-image: url(../images/concrete-wall.png);
   border-radius: 12px;
   margin-bottom: 1em;
   margin-top: 1.5em;
+  color: black;
 }
 
 #tweet-text {
@@ -68,17 +70,19 @@
 
 .previous-tweets article {
   background-color: rgb(187,229,237);
-  background-image: url(/public/images/concrete-wall.png);
+  background-image: url(../images/concrete-wall.png);
   font-family: 'Source Sans Pro', 'sans-serif';
-  height: 25em; /* This might have to be adjusted later. */
+  height: 25em; 
   padding-top: 2.5em;
   border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+  width: 100%;
+  color: black;
 }
 
 .previous-tweets-container {
   padding: 2.5em;
   background-color:#4056A1; 
-  background-image: url(/public/images/concrete-wall.png);
+  background-image: url(../images/concrete-wall.png);
   border-radius: 12px;
   margin-bottom: 1em;
   margin-top: 1em;
