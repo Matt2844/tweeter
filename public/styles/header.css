@@ -9,11 +9,10 @@
   background-image: url(../images/concrete-wall.png);
 }
 
-header, .avatar-image, .avatar-name{
+.avatar-header, .avatar-image, .avatar-name{
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  margin-top: 120px;
 }
 

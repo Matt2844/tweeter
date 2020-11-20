@@ -4,19 +4,34 @@
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
 
+// jQuery DOM test working
 $(document).ready(function() {
   console.log("DOM 2 ready");
+
+  // Load tweets
+  const loadTweets = function() {
+    console.log('loading tweets');
+    $.ajax({
+      type: "GET",
+      dataType: "json",
+      url: '/tweets',
+      success: (response) => {
+        console.log(response);
+        renderTweets(response);
+      }
+    })
+  }
+
   loadTweets();
-  hideHandle();
+
   $('.tweet-form').submit(function(event) {
+    event.preventDefault();
     console.log('tweet-form submit...');
 
     if (!validateTweets()) {
-      event.preventDefault();
       validationMessage(false);
     } else {
       validationMessage(true);
-      event.preventDefault()
       $.ajax({
         type: "POST",
         url: '/tweets',
@@ -24,13 +39,73 @@ $(document).ready(function() {
       }).then(function() {
         console.log('post is successful');
         loadTweets();
+        emptyTextBox();
       });
     }
   });
 });
 
+// Creating the template for a new tweet
+const createTweetElement = function(tweetData) {
+  let $tweet = $('<article>').addClass('tweet')
+  let tweetHTML =
+    `<div class="previous-tweets-container">
+      <h3>
+        <img src="${tweetData.user.avatars}"/>
+        <span>${tweetData.user.name}</span>
+        <span class="hidden-handle">${tweetData.user.handle}</span>
+      </h3>
+      <p>${tweetData.content.text}</p>
+      <footer>
+        <time class="time">${new Date(tweetData.created_at)}</time>
+        <i class="fa fa-flag"></i>
+        <i class="fa fa-retweet"></i>
+        <i class="fa fa-heart"></i>
+      </footer>`
 
-// receive array of tweets as json get request
+  let tweetElement = $tweet.append(tweetHTML);
+  return tweetElement;
+};
+
+// Rendering
+const renderTweets = function(tweets) {
+
+  for (let tweet of tweets) {
+    let tweetElement = createTweetElement(tweet);
+    $('.previous-tweets').prepend(tweetElement);
+  }
+}
+
+// Checking to see if tweet is valid
+const validateTweets = (function() {
+  const input = $('#tweet-text');
+
+  if (input.val() !== "" && input.val().length < 140) {
+    return true;
+  } else {
+    return false;
+  }
+});
+
+// If user enters a valid tweet or not
+const validationMessage = function(trueOrFalse) {
+  const validationMessage = $(".validation-message");
+
+  if (trueOrFalse === false) {
+    validationMessage.css("visibility", "visible");
+  }
+  if (trueOrFalse === true) {
+    validationMessage.css("visibility", "hidden");
+  }
+}
+
+// Empty text field on submit tweet
+const emptyTextBox = function() {
+  $('#tweet-text').val(null)
+}
+
+
+// Below is hard coded data, and an in-progress function. Mostly for references only. 
 
 const tweetData = {
   "user": {
@@ -70,80 +145,11 @@ const data = [
   }
 ]
 
-// Creating the template for a new tweet
-const createTweetElement = function(tweetData) {
-  let $tweet = $('<article>').addClass('tweet')
-  let tweetHTML =
-    `   <div class="previous-tweets-container">
-      <h1>${tweetData.user.avatars}<span>${tweetData.user.name}</span><span class="hidden-handle">${tweetData.user.handle}</span></h1>
-      <p>${tweetData.content.text}</p>
-      <footer>
-        <time>${tweetData.created_at}</time><i class="fa fa-flag" style="font-size:24px"></i></i><i class="fa fa-retweet"
-        style="font-size:24px"></i><i class="fa fa-heart" style="font-size:24px"></i>
-      </footer>`
-
-  let tweetElement = $tweet.append(tweetHTML);
-  return tweetElement;
-};
-
-// Rendering
-const renderTweets = function(tweets) {
-
-  for (let tweet of tweets) {
-    let tweetElement = createTweetElement(tweet);
-    $('.previous-tweets').prepend(tweetElement);
-  }
-}
-
-// Checking to see if tweet is valid
-const validateTweets = (function() {
-  const input = $('#tweet-text');
-
-  if (input.val() !== "" && input.val().length < 140) {
-    return true;
-  } else {
-    return false;
-  }
-});
-
-// Load tweets
-const loadTweets = function() {
-  console.log('loading tweets');
-  $.ajax({
-    type: "GET",
-    dataType: "json",
-    url: '/tweets',
-    success: (response) => {
-      console.log(response);
-      renderTweets(response);
-    }
-  })
-}
+  // // Could not get the handle on hover = visible to work. Work in progress, tried for hours...
+  // $(".previous-tweets-container").hover(function() {
+  //   console.log('in')
+  // }, function() {
+  //   console.log('out')
+  // });
 
 
-// If user enters a valid tweet or not
-const validationMessage = function(trueOrFalse) {
-  const validationMessage = $(".validation-message");
-
-  if (trueOrFalse === false) {
-    validationMessage.css("visibility", "visible");
-  }
-  if (trueOrFalse === true) {
-    validationMessage.css("visibility", "hidden");
-  }
-}
-
-// CSS related stuff
-const hideHandle = function() {
-  $('.previous-tweets-container').mouseenter(tweetNameVisible).mouseleave(tweetNameInvisible);
-};
-
-// Change tweeter handle to visible on hover
-const tweetNameVisible = function() {
-  $('.hidden-handle').animate({ opacity: 1 }, 300);
-};
-
-// Change tweeter handle opacity back to invsible
-const tweetNameInvisible = function() {
-  $('.hidden-handle').animate({ opacity: 0 }, 300);
-}

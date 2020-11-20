@@ -1,5 +1,5 @@
 
-// Ensure DOM has loaded
+// jQuery DOM test working
 $(document).ready(function() {
   console.log("DOM 1 ready");
 
