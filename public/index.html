@@ -37,57 +37,58 @@
   <!-- Top nav bar (fixed) -->
   <nav>
     <span class="nav-logo">tweeter</span>
-    <span class="nav-new-tweet"><strong>Write</strong>&nbsp;a new tweet&nbsp;&nbsp;<i
-        class="fa fa-angle-double-down"></i></span>
+    <a href="#tweet-href"><span class="nav-new-tweet"><strong>Write</strong>&nbsp;a new tweet&nbsp;&nbsp;<i
+          class="fa fa-angle-double-down"></i></span></a>
 
   </nav>
 
   <!-- Header Icon -->
+  <div class="test-media">
+    <header class="avatar-header">
+      <div class="avatar-image">
+        <img src="./images/profile-hex.png">
+      </div>
+      <br>
+      <div class="avatar-name">
+        <h2>Your Name</h2>
+      </div>
 
-  <header class="avatar-header">
-    <div class="avatar-image">
-      <img src="./images/profile-hex.png">
-    </div>
-    <br>
-    <div class="avatar-name">
-      <h2>Your Name</h2>
-    </div>
-
-  </header>
-
-
-  <!-- Page-specific (main) content here -->
-  <!-- New tweet section -->
-  <main>
-    <div class="container">
-      <section class="new-tweet">
-        <h2>Compose Tweet</h2>
-        <form class="tweet-form" method="POST" action="/tweets/">
-          <textarea name="text" id="tweet-text" placeholder="What are you humming about?"></textarea>
-          <div>
-            <button type="submit">Tweet</button>
-            <output name="counter" class="counter" for="tweet-text">140</output>
-          </div>
-        </form>
-      </section>
-    </div>
-
-    <!-- Previous tweets section -->
-
-    <section class="previous-tweets">
-      <article>
-        <div class="previous-tweets-container">
-          <h1>icon, <span>name</span><span class="hidden-handle">Hide me</span></h1>
-          <p>where the tweet appears</p>
-          <footer>
-            <time>timestamp </time><i class="flag">icon1</i><i class="share">icon2</i><i class="heart">icon3</i>
-          </footer>
-        </div>
-      </article>
-
-    </section>
+    </header>
 
 
+    <!-- Page-specific (main) content here -->
+    <!-- New tweet section -->
+    <main>
+      <div id="tweet-href"></div>
+      <div class="container">
+        <section class="new-tweet">
+          <h2>Compose Tweet</h2>
+          <form class="tweet-form" method="POST" action="/tweets/">
+            <textarea name="text" id="tweet-text" placeholder="What are you humming about?"></textarea>
+            <div>
+              <button type="submit">Tweet</button>
+              <div class="validation-message">Your tweet did not meet requirements, try again.</div>
+              <output name="counter" class="counter" for="tweet-text">140</output>
+            </div>
+          </form>
+        </section>
+      </div>
+  </div>
+
+  <!-- Previous tweets section -->
+
+  <section class="previous-tweets">
+    <article>
+      <div class="previous-tweets-container">
+        <h1>icon, <span>name</span><span class="hidden-handle">Hide me</span></h1>
+        <p>where the tweet appears</p>
+        <footer>
+          <time>timestamp</time><i class="fa fa-flag" style="font-size:24px"></i></i><i class="fa fa-retweet"
+            style="font-size:24px"></i><i class="fa fa-heart" style="font-size:24px"></i>
+        </footer>
+      </div>
+    </article>
+  </section>
 
   </main>
 </body>

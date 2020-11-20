@@ -4,7 +4,6 @@ $(document).ready(function() {
   console.log("DOM 1 ready");
 
   $('#tweet-text').keyup(handleKeyUp);
-  $('.previous-tweets-container').mouseenter(tweetNameVisible).mouseleave(tweetNameInvisible);
 })
 
 // Tweet characters left counter       
@@ -15,15 +14,7 @@ const handleKeyUp = function() {
   const charText = $('.counter').text(charsLeft);
 };
 
-// Change tweeter handle to visible on hover
-const tweetNameVisible = function() {
-  $('.hidden-handle').animate({ opacity: 1 }, 300);
-};
 
-// Change tweeter handle opacity back to invsible
-const tweetNameInvisible = function() {
-  $('.hidden-handle').animate({ opacity: 0 }, 300);
-}
 
 
 

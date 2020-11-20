@@ -11,6 +11,8 @@ nav {
   font-family: 'Source Sans Pro', sans-serif;
   position: fixed;
   top: 0; 
+  z-index:1; 
+  border-bottom: 1px solid black;
 }
 
 .nav-logo {
@@ -25,7 +27,12 @@ nav {
   margin-right: 8%;
 }
 
-.fa, .fa-angle-double-down {
+nav a {
+  text-decoration: none;
+  color: black;
+}
+
+.fa-angle-double-down {
   font-size: 28px;
   color: red;
 }

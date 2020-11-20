@@ -4,8 +4,7 @@
   display: flex;
   justify-content: center;
   width: 100%;
-  background-color: #FFFF;
-   /* Add concrete transparent image here */
+  background-color: rgb(249, 178, 171);
 }
 
 .new-tweet h2 {
@@ -58,12 +57,33 @@
   color: #4056A1;
 }
 
+
+
+
+
 .counter {
   display: flex;
   justify-content: flex-end;
   margin-right: 2em;
   font-family: 'Bungee', sans-serif;
 }
+
+/* The validation message when sending a tweet */ 
+
+.validation-message {
+  color: rgb(237, 67, 67);
+  border: 1px solid rgb(255, 2, 2); 
+  margin-right: 5em;
+  text-align: center;
+  margin-top: 15px;
+  position: absolute;
+  padding: 8px;
+  background-color: rgba(232, 222, 222, 0.7);
+  border-radius: 3px;
+  font-size: 19px;
+  visibility: hidden;
+}
+
 
 /* the previous tweets section */ 
 
@@ -86,7 +106,7 @@
   border-radius: 12px;
   margin-bottom: 1em;
   margin-top: 1em;
-  width: 32em;
+  width: 31em;
   margin: auto;
   padding-top: 1em;
   padding-bottom: 1em;
@@ -104,7 +124,7 @@
   border-radius: 12px;
   box-shadow: 3px 3px 5px;
   padding: 2em;
-  width: 27em;
+  width: 26em;
   margin: auto; 
 }
 
@@ -122,8 +142,58 @@
   font-size: 18px;
 }
 
+.previous-tweets-container footer i {
+  float: right; 
+  padding-left: 6px; 
+  padding-right: 6px;
+  cursor: pointer;
+  opacity: 0.7;
+  color: black; 
+}
+
+.previous-tweets-container footer i:hover {
+  opacity: 1;
+  color: red;
+  transition: 0.3s;
+}
+
+/* Screen size layouts */
+
+@media only screen and (min-width: 1024px) {
+
+.test-media {
+  display: flex;
+  background-color: rgb(187,229,237);
+  background-image: url(../images/concrete-wall.png);
+}
+
+.new-tweet{
+  margin-top: 119px;
+  width: 22em; 
+  border-radius: 0px;
+  background-image: none;
+}
+.avatar-header {
+  margin-top: 119px ;
+  margin-bottom: 1px;
+  padding-bottom: none; 
+}
+
+.avatar-name {
+  margin-top: 1px;
+}
+.container {
+  background-color: #4056A1;
+  border-bottom: 1px solid rgb(43, 43, 43);
+  border-left: 1px solid rgb(43, 43, 43);
+}
+
+#tweet-text {
+  width: 18em;
+}
 
 
+}
 
 
 
