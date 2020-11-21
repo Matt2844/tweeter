@@ -5,7 +5,7 @@ help web bootcamp students build on front-end skills.
 
 ## Screenshots
 
-!["Create tweet box for small screen width"](fakenews.png)
+!["Create tweet box for small screen width"](file:///Users/matthewford/Desktop/Tweeter%20Screenshots/fakenews.png)
 !["Dynamic content"](snarkycomment.png)
 !["Create tweet box for a larger screen width"](responseivedesign.png)
 
