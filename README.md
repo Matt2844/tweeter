@@ -1,15 +1,15 @@
 # Tweeter Project
 
-Tweeter is a simple, single-page Twitter clone.
+Tweeter is a simple, single-page Twitter clone. AJAX-based Twitter clone using jQuery, HTML5, and CSS3 to 
+help web bootcamp students build on front-end skills. 
 
-This repository is the starter code for the project: Students will fork and clone this repository, then build upon it to practice their HTML, CSS, JS, jQuery and AJAX front-end skills, and their Node, Express and MongoDB back-end skills.
+## Screenshots
 
-## Getting Started
+!["Create tweet box for small screen width"](https://github.com/Matt2844/tweeter/commit/67b2cacc1e9033f3204ce4c34619727610cca42f#diff-656086aa288e5ec68bf168fb70bef892e17664f77abc80d2b28bdbbbeb8fb38a)
 
-1. Fork this repository, then clone your fork of this repository.
-2. Install dependencies using the `npm install` command.
-3. Start the web server using the `npm run local` command. The app will be served at <http://localhost:8080/>.
-4. Go to <http://localhost:8080/> in your browser.
+!["Dynamic content"](https://github.com/Matt2844/tweeter/commit/67b2cacc1e9033f3204ce4c34619727610cca42f#diff-f000d7872d35e8707fec6879b8e6df6883f94f7558279d3c22cdd80248888b87)
+
+!["Create tweet box for a larger screen width"](https://github.com/Matt2844/tweeter/commit/67b2cacc1e9033f3204ce4c34619727610cca42f#diff-663143c7deb34518153d6168ba5dba9f824aaa9eeaf9b86d2a38a8c6477709f3)
 
 ## Dependencies
 
